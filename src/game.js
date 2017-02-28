@@ -12,8 +12,6 @@ function preload() {
 	game.load.image('obstacle', 'assets/obstacle.png', 100, 40);
 	game.load.image('border', 'assets/border.png');
 	game.load.spritesheet('hero', 'assets/hero2.png', 40, 40, 4);
-
-	game.load.audio('music', 'assets/song.mp3');
 }
 
 
@@ -40,12 +38,12 @@ function create() {
 
 
 	// Here we create the ground
-	var ground = border.create(0, 0, 'border');
+	let ground = border.create(0, 0, 'border');
 
 	// This stops it from falling away when you jump on it
 	ground.body.immovable = true;
 
-	var ground = border.create(0, game.world.height - 40, 'border');
+	 ground = border.create(0, game.world.height - 40, 'border');
 
 	game.physics.enable(ground, Phaser.Physics.ARCADE);
 	// This stops the character from leaving world bounds
@@ -56,7 +54,6 @@ function create() {
 	player = game.add.sprite(30, 260, 'hero');
 	game.physics.enable(player, Phaser.Physics.ARCADE);
 	player.body.immovable = true;
-	// player.body.gravity.y = 300;
 	player.body.velocity.y = 300;
 	player.body.collideWorldBounds = true;
 	var playing = player.animations.add('playing');
@@ -66,7 +63,7 @@ function create() {
 	game.time.events.repeat(Phaser.Timer.SECOND, 10000, createObstacle, this);
 
 	game.time.events.repeat(Phaser.Timer.SECOND * 5, 10000, function() {timer += 5; speed -= 50; score += 7; console.log(timer, speed)}, this);
-	//game.reset();
+	
 }
 
 function createObstacle() {
@@ -96,8 +93,7 @@ function update() {
 
  	if (game.input.mousePointer.isDown || spacebar.isDown) {
 		player.body.velocity.y -= 30;
-		// player.body.acceleration += 2000;
-	}else{
+	} else {
 		player.body.velocity.y += 25;
 		// player.body.acceleration -= 200;
 	}
@@ -114,7 +110,7 @@ function collision (player, border) {
 	// something happens
 	// change player animation? spritesheet
 	scoreText = game.add.text(230, 270, 'Game Over', { fontSize: '32px'});
-	scoreText = game.add.text(130, 300, 'Press Enter Play Again', { fontSize: '32px'});
+	scoreText = game.add.text(130, 300, 'Press Enter To Play Again', { fontSize: '32px'});
 	player.kill();
 	scoreText = game.add.text(40, 40, 'Score: ' + 5 * score);
 	if (score*5 > highScore) {

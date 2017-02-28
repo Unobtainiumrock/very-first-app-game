@@ -1,4 +1,4 @@
-#Very First App I Ever made with my friends
+#Very first app I ever made with my friends
 Ahh nostalgia! Created by Tim Woo, Trevor Pace, and Nicholas Fleischhauer
 
 ##Instructions

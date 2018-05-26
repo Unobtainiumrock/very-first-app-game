@@ -1,5 +1,5 @@
 # Very first app I ever made with my friends
-Ahh nostalgia! Created by Tim Woo, Trevor Pace, and Nicholas Fleischhauer. This was my first app/game I made with my buddies in late 2015 or early 2016. 
+Ahh nostalgia! Created by Tim Woo, Trevor Pace, and Nicholas Fleischhauer. This was my first app/game I made with my buddies in late 2015 or early 2016. It uses (Phaser.io)[http://phaser.io/].
 
 ## Instructions
 After cloning this, run `npm install` and then run `npm start`, and finally nagivate to http://localhost:8080/ in your browser.
@@ -11,3 +11,7 @@ This game is very similar in difficulty and gameplay to [Helicopter](http://www.
 
 ### Controls
 `left-click` causes the green player block to rise. By default, the block will fall rapdidly due to gravity.
+
+
+## Modules used
+* [http-server]()
